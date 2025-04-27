@@ -1,0 +1,472 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog para aprender a configurar um servidor, gerenciar arquivos remotamente e criar sites bonitos usando Android.">
+    <meta name="keywords" content="Android, Termux, Spck Code Editor, MariaDB, FTP, HTML, CSS, JavaScript, servidor">
+    <meta name="author" content="Seu Nome">
+    <meta name="robots" content="index, follow">
+    <title>Blog - Crie Seu Próprio Servidor e Site no Android</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Orbitron', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #00e6e6;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin: 30px 0;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            color: #00e6e6;
+        }
+
+        h3 {
+            color: #00b3b3;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 0 0 15px 20px;
+        }
+
+        ul li a {
+            color: #00e6e6;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            color: #00b3b3;
+            text-decoration: underline;
+        }
+
+        .code-box {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+        }
+
+        .code-box pre {
+            margin: 0;
+            overflow-x: auto;
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        .code-box button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #00e6e6;
+            border: none;
+            border-radius: 4px;
+            color: #121212;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .code-box button:hover {
+            background-color: #00b3b3;
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        footer .github-links a {
+            color: #00e6e6;
+            text-decoration: none;
+        }
+
+        footer .github-links a:hover {
+            color: #00b3b3;
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crie Seu Próprio Servidor e Site no Android</h1>
+        <p>Aprenda a configurar um servidor, gerenciar arquivos remotamente e criar sites incríveis</p>
+    </header>
+
+    <main class="container">
+        <!-- Introdução -->
+        <section id="intro">
+            <h2>Bem-vindo ao Blog!</h2>
+            <p>
+                🚀 Quer transformar seu dispositivo Android em um poderoso servidor e criar sites incríveis? Neste blog, você aprenderá passo a passo como configurar um ambiente de desenvolvimento, gerenciar bancos de dados, hospedar arquivos remotamente e desenvolver páginas web responsivas. Tudo isso usando ferramentas gratuitas como <strong>Termux</strong>, <strong>Spck Code Editor</strong>, <strong>MariaDB</strong> e <strong>FTP</strong>.
+            </p>
+            <p>
+                São <strong>quatro módulos práticos</strong>, cada um com exemplos de código e instruções detalhadas. Ao final, você terá um servidor funcional e um site bonito, tudo rodando no seu Android. Vamos começar?
+            </p>
+            <h3>Módulos Disponíveis</h3>
+            <ul>
+                <li><a href="#module1">Módulo 1: Configuração do Ambiente</a></li>
+                <li><a href="#module2">Módulo 2: Criando um Banco de Dados SQL</a></li>
+                <li><a href="#module3">Módulo 3: Criando um Servidor FTP</a></li>
+                <li><a href="#module4">Módulo 4: Criando um Site Bonito</a></li>
+            </ul>
+        </section>
+
+        <!-- Módulo 1: Configuração do Ambiente -->
+        <section id="module1">
+            <h2>Módulo 1: Configuração do Ambiente</h2>
+            <p>
+                Neste módulo, vamos configurar as ferramentas essenciais para transformar seu Android em um ambiente de desenvolvimento poderoso. Vamos instalar e configurar o <strong>Spck Code Editor</strong>, <strong>Termux</strong>, <strong>MariaDB/MySQL</strong> e um <strong>servidor FTP</strong>.
+            </p>
+            <h3>Passo a Passo</h3>
+            <ol>
+                <li>
+                    <strong>Instalar o Spck Code Editor</strong>:
+                    <p>Baixe o <a href="https://play.google.com/store/apps/details?id=io.spck" target="_blank">Spck Code Editor</a> na Play Store. Ele é perfeito para editar HTML, CSS e JavaScript com suporte a pré-visualização.</p>
+                </li>
+                <li>
+                    <strong>Instalar o Termux</strong>:
+                    <p>Baixe o <a href="https://f-droid.org/packages/com.termux/" target="_blank">Termux</a> do F-Droid ou GitHub (não está mais na Play Store). Execute os seguintes comandos para atualizar o ambiente:</p>
+                    <div class="code-box">
+                        <pre><code>
+pkg update && pkg upgrade
+pkg install wget
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Instalar MariaDB/MySQL</strong>:
+                    <p>Instale o MariaDB para gerenciar bancos de dados:</p>
+                    <div class="code-box">
+                        <pre><code>
+pkg install mariadb
+mysql_install_db
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Configurar Servidor FTP</strong>:
+                    <p>Instale o `vsftpd` para acesso remoto a arquivos:</p>
+                    <div class="code-box">
+                        <pre><code>
+pkg install vsftpd
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+            </ol>
+            <p><strong>Dica</strong>: Certifique-se de que seu Android tem pelo menos 1GB de armazenamento livre para evitar problemas com as instalações.</p>
+        </section>
+
+        <!-- Módulo 2: Criando um Banco de Dados SQL -->
+        <section id="module2">
+            <h2>Módulo 2: Criando um Banco de Dados SQL</h2>
+            <p>
+                Agora, vamos configurar um banco de dados com <strong>MariaDB/MySQL</strong> no Termux, criar tabelas e conectar seu site HTML a ele usando PHP.
+            </p>
+            <h3>Passo a Passo</h3>
+            <ol>
+                <li>
+                    <strong>Iniciar o MariaDB</strong>:
+                    <p>Inicie o serviço do MariaDB e configure uma senha para o root:</p>
+                    <div class="code-box">
+                        <pre><code>
+mysqld_safe
+mysql_secure_installation
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Criar um Banco de Dados e Tabelas</strong>:
+                    <p>Acesse o MariaDB e crie um banco de dados chamado `meu_site` com uma tabela `usuarios`:</p>
+                    <div class="code-box">
+                        <pre><code>
+mysql -u root -p
+CREATE DATABASE meu_site;
+USE meu_site;
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255),
+    email VARCHAR(255)
+);
+INSERT INTO usuarios (nome, email) VALUES ('Exemplo', 'exemplo@email.com');
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Conectar HTML com MySQL via PHP</strong>:
+                    <p>Crie um arquivo `conectar.php` para conectar ao banco e exibir dados:</p>
+                    <div class="code-box">
+                        <pre><code>
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "SUA_SENHA";
+$db = "meu_site";
+
+$conn = mysqli_connect($host, $user, $pass, $db);
+if (!$conn) {
+    die("Conexão falhou: " . mysqli_connect_error());
+}
+
+$query = "SELECT * FROM usuarios";
+$result = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "Nome: " . $row['nome'] . " | Email: " . $row['email'] . "<br>";
+}
+
+mysqli_close($conn);
+?>
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+            </ol>
+            <p><strong>Dica</strong>: Sempre use senhas seguras para o MariaDB e evite expor credenciais em códigos públicos.</p>
+        </section>
+
+        <!-- Módulo 3: Criando um Servidor FTP -->
+        <section id="module3">
+            <h2>Módulo 3: Criando um Servidor FTP</h2>
+            <p>
+                Vamos configurar um servidor FTP no Termux para acessar arquivos remotamente usando ferramentas como o FileZilla.
+            </p>
+            <h3>Passo a Passo</h3>
+            <ol>
+                <li>
+                    <strong>Iniciar o Servidor FTP</strong>:
+                    <p>Inicie o `vsftpd` e configure o acesso:</p>
+                    <div class="code-box">
+                        <pre><code>
+vsftpd
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Acessar via FileZilla</strong>:
+                    <p>Baixe o <a href="https://filezilla-project.org/" target="_blank">FileZilla</a> no seu computador. Configure a conexão com:</p>
+                    <ul>
+                        <li>Host: IP do seu Android (descubra com `ifconfig` no Termux)</li>
+                        <li>Usuário: `u0_aXX` (substitua XX pelo ID do usuário do Termux, veja com `whoami`)</li>
+                        <li>Senha: (deixe em branco ou configure uma senha específica)</li>
+                        <li>Porta: 21</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Configurar Permissões e Segurança</strong>:
+                    <p>Edite o arquivo de configuração do `vsftpd` para limitar acessos:</p>
+                    <div class="code-box">
+                        <pre><code>
+nano /data/data/com.termux/files/usr/etc/vsftpd.conf
+# Adicione ou ajuste:
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+chroot_local_user=YES
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                    <p>Reinicie o serviço após alterar:</p>
+                    <div class="code-box">
+                        <pre><code>
+pkill vsftpd
+vsftpd
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+            </ol>
+            <p><strong>Dica</strong>: Use uma VPN ou restrinja o acesso FTP à sua rede local para maior segurança.</p>
+        </section>
+
+        <!-- Módulo 4: Criando um Site Bonito -->
+        <section id="module4">
+            <h2>Módulo 4: Criando um Site Bonito</h2>
+            <p>
+                Vamos usar o <strong>Spck Code Editor</strong> para criar uma página HTML responsiva, estilizada com CSS e com funcionalidades interativas em JavaScript.
+            </p>
+            <h3>Passo a Passo</h3>
+            <ol>
+                <li>
+                    <strong>Criar o HTML</strong>:
+                    <p>No Spck Code Editor, crie um arquivo `index.html`:</p>
+                    <div class="code-box">
+                        <pre><code>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre</h2>
+            <p>Este é um site criado no Android com Spck Code Editor.</p>
+            <button onclick="mostrarMensagem()">Clique Aqui!</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Aplicar Estilos com CSS</strong>:
+                    <p>Crie um arquivo `styles.css` para um design responsivo:</p>
+                    <div class="code-box">
+                        <pre><code>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 0.5rem;
+    }
+}
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+                <li>
+                    <strong>Adicionar Interatividade com JavaScript</strong>:
+                    <p>Crie um arquivo `script.js`:</p>
+                    <div class="code-box">
+                        <pre><code>
+function mostrarMensagem() {
+    alert("Bem-vindo ao meu site criado no Android!");
+}
+                        </code></pre>
+                        <button onclick="copyCode(this)">Copiar Código</button>
+                    </div>
+                </li>
+            </ol>
+            <p><strong>Dica</strong>: Use a função de pré-visualização do Spck Code Editor para testar seu site em tempo real.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Meu Blog. Todos os direitos reservados.</p>
+        <div class="github-links">
+            <p>Links do Projeto no GitHub:</p>
+            <ul>
+                <li><a href="INSIRA_LINK_GITHUB_AQUI" target="_blank">Repositório Principal</a></li>
+                <!-- Adicione mais links conforme necessário -->
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function copyCode(button) {
+            const code = button.previousElementSibling.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Código copiado!');
+            });
+        }
+    </script>
+</body>
+</html>
