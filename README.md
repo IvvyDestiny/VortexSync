@@ -73,6 +73,6 @@ Quer contribuir? Siga estes passos:
 3. **Faça um Pull Request**
 
 ## 📜 Licença
-Este projeto está sob a licença **MIT**. Sinta-se livre para usar e modificar!
+Este projeto está sob a licença **GPL-3.0**. Sinta-se livre para usar e modificar!
 
 ---
