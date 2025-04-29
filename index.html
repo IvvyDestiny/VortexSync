@@ -1,14 +1,111 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog VortexSync</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #638b3d;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #338b3d;
+            padding: 20px;
+            color: white;
+        }
+
+        .menu-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+            background: #33003d;
+        }
+
+        .menu-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .menu {
+            display: inline-flex;
+            gap: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            background: #008CBA;
+            border-radius: 5px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #005f8a;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background: #1f1f1f;
+            padding: 10px;
+            margin-top: 20px;
+            color: white;
+        }
+    </style>
 </head>
-
 <body>
-  
-</body>
+    <header>
+        <h1>Blog VortexSync</h1>
+        <p>Aprenda a criar servidores e desenvolver aplicações web no Termux!</p>
+    </header>
 
+    <div class="menu-container">
+        <p>Arraste o menu e escolha seu módulo</p>
+        <div class="menu">
+            <a href="modulo1.html">📌 Módulo 1</a>
+            <a href="modulo2.html">📌 Módulo 2</a>
+            <a href="modulo3.html">📌 Módulo 3</a>
+            <a href="modulo4.html">📌 Módulo 4</a>
+            <a href="modulo5.html">📌 Módulo 5</a>
+            <a href="modulo6.html">📌 Módulo 6</a>
+            <a href="modulo7.html">📌 Módulo 7</a>
+            <a href="modulo8.html">📌 Módulo 8</a>
+            <a href="modulo9.html">📌 Módulo 9</a>
+            <a href="modulo10.html">📌 Módulo 10</a>
+            <a href="modulo11.html">📌 Módulo 11</a>
+            <a href="modulo12.html">📌 Módulo 12</a>
+            <a href="modulo13.html">📌 Módulo 13</a>
+            <a href="modulo14.html">📌 Módulo 14</a>
+            <a href="modulo15.html">📌 Módulo 15</a>
+        </div>
+    </div>
+
+    <main>
+        <h2>Bem-vindo ao Blog VortexSync</h2>
+        <p> Que tal aprender a criar um sote HTML totalmente do zero, pelo smartphone e neste curso, você aprenderá a criar servidores, configurar banco de dados e desenvolver aplicações web direto do seu Android ou IOS. Tudo com a maior segurança envolvida para projeter você e seu servidor mobile</p>
+        <p>Deslize pelo menu acima para acessar os módulos!</p>
+    </main>
+
+    <footer>
+        <p>© 2025 VortexSync - Todos os direitos reservados.
+        Os códigos disponiveis estão protegidos pela licença MIT e GPL-3.0</p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-container').addEventListener('wheel', (event) => {
+            event.preventDefault();
+            document.querySelector('.menu-container').scrollLeft += event.deltaY;
+        });
+    </script>
+</body>
 </html>
