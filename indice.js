@@ -1,6 +1,7 @@
 const pg = require('pg');
 
 const DB_URL = 'postgres://tsdbadmin:frtkvsiqc7vcrym6@ccdkh2pmh1.x9zz4ze7ao.tsdb.cloud.timescale.com:34408/tsdb';
+const versaoPlataforma = "Beta 0.111.151"; // Substitua pela versão atual
 
 async function main() {
   const { Client } = pg;

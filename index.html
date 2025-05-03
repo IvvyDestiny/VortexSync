@@ -1,111 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog VortexSync</title>
-
+    <title>Faculdade Destiny BR - Aprenda Programação de Forma Divertida!</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #638b3d;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: #338b3d;
-            padding: 20px;
-            color: white;
-        }
-
-        .menu-container {
-            overflow-x: auto;
-            white-space: nowrap;
-            padding: 10px;
-            background: #33003d;
-        }
-
-        .menu-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .menu {
-            display: inline-flex;
-            gap: 10px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            background: #008CBA;
-            border-radius: 5px;
-            color: white;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            background: #005f8a;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        footer {
-            background: #1f1f1f;
-            padding: 10px;
-            margin-top: 20px;
-            color: white;
-        }
+        /* Estilos específicos para esta página (se houver) */
     </style>
 </head>
 <body>
-    <header>
-        <h1>Blog VortexSync</h1>
-        <p>Aprenda a criar servidores e desenvolver aplicações web no Termux!</p>
-    </header>
-
-    <div class="menu-container">
-        <p>Arraste o menu e escolha seu módulo</p>
-        <div class="menu">
-            <a href="modulo1.html">📌 Módulo 1</a>
-            <a href="modulo2.html">📌 Módulo 2</a>
-            <a href="modulo3.html">📌 Módulo 3</a>
-            <a href="modulo4.html">📌 Módulo 4</a>
-            <a href="modulo5.html">📌 Módulo 5</a>
-            <a href="modulo6.html">📌 Módulo 6</a>
-            <a href="modulo7.html">📌 Módulo 7</a>
-            <a href="modulo8.html">📌 Módulo 8</a>
-            <a href="modulo9.html">📌 Módulo 9</a>
-            <a href="modulo10.html">📌 Módulo 10</a>
-            <a href="modulo11.html">📌 Módulo 11</a>
-            <a href="modulo12.html">📌 Módulo 12</a>
-            <a href="modulo13.html">📌 Módulo 13</a>
-            <a href="modulo14.html">📌 Módulo 14</a>
-            <a href="modulo15.html">📌 Módulo 15</a>
-        </div>
+    <div class="banner">
+        🔥 OFERTA ESPECIAL: Domine C# e PHP com 50% de desconto! Inscreva-se agora! 🔥
+        <span class="close-btn" onclick="closeBanner()">×</span>
+    </div>
+    <div class="top-menu">
+        <a href="index.html" style="font-size: 1.2em; margin-right: 15px; text-decoration: none; color: #333;">Home</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="#">Cursos</a>
+        <a href="#">Contato</a>
+        <a href="blog.html">Blog</a>
+        <a href="#">Suporte</a>
+        <a href="#">FAQ</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Serviço</a>
+        <a href="#">Feedback</a>
+        <a href="#">Comunidade</a>
+        <a href="#">Eventos</a>
+        <a href="#">Recursos</a>
     </div>
 
-    <main>
-        <h2>Bem-vindo ao Blog VortexSync</h2>
-        <p> Que tal aprender a criar um sote HTML totalmente do zero, pelo smartphone e neste curso, você aprenderá a criar servidores, configurar banco de dados e desenvolver aplicações web direto do seu Android ou IOS. Tudo com a maior segurança envolvida para projeter você e seu servidor mobile</p>
-        <p>Deslize pelo menu acima para acessar os módulos!</p>
-    </main>
+    <div class="top-menu">
+        <a href="#">Login</a>
+        <a href="#">Registro</a>
+        <div style="display: inline-block; position: relative;">
+            <a href="#" onclick="toggleIdiomaDropdown(event)">Tradutor Google</a>
+            <div class="idioma-dropdown">
+                <a href="?lang=es" onclick="traduzir('es', event)">Espanhol</a>
+                <a href="?lang=en" onclick="traduzir('en', event)">Inglês</a>
+            </div>
+        </div>
+        <button onclick="toggleTheme()">Alternar Tema</button>
+    </div>
+
+    <div class="curso-container">
+        <header>
+            <h1>Faculdade Destiny BR</h1>
+            <p>Aprenda programação C# e PHP com HTML de maneira envolvente e dinâmica!</p>
+        </header>
+
+        <div class="menu-container">
+            <p>Arraste o menu e escolha seu módulo</p>
+        </div>
+        <div class="menu-container">
+            <div class="menu">
+                <a href="modulo1.html">📌 Módulo 1</a>
+                <a href="modulo2.html">📌 Módulo 2</a>
+                <a href="modulo3.html">📌 Módulo 3</a>
+                <a href="modulo4.html">📌 Módulo 4</a>
+                <a href="modulo5.html">📌 Módulo 5</a>
+                <a href="modulo6.html">📌 Módulo 6</a>
+                <a href="modulo7.html">📌 Módulo 7</a>
+                <a href="modulo8.html">📌 Módulo 8</a>
+                <a href="modulo9.html">📌 Módulo 9</a>
+                <a href="modulo10.html">📌 Módulo 10</a>
+                <a href="modulo11.html">📌 Módulo 11</a>
+                <a href="modulo12.html">📌 Módulo 12</a>
+                <a href="modulo13.html">📌 Módulo 13</a>
+                <a href="modulo14.html">📌 Módulo 14</a>
+                <a href="modulo15.html">📌 Módulo 15</a>
+            </div>
+        </div>
+
+        <section class="secao" id="introducao">
+            <h2 class="titulo-secao">Introdução</h2>
+            <p>Bem-vindo ao curso! Nosso objetivo é ensinar programação de forma interativa e prática.</p>
+            <p><strong>Desafio:</strong> Manter o foco e a atenção durante o aprendizado.</p>
+        </section>
+
+        <section class="secao" id="plano-aprendizado">
+            <h2 class="titulo-secao">Plano de Aprendizado</h2>
+            <ul>
+                <li><strong>✔</strong> Criar uma rotina diária de estudos (com lembretes!).</li>
+                <li><strong>✔</strong> Desenvolver uma página HTML interativa com CSS e JavaScript.</li>
+                <li><strong>✔</strong> Adicionar animações e navegação intuitiva.</li>
+                <li><strong>✔</strong> Utilizar efeitos visuais (máquina de escrever, transições suaves).</li>
+                <li><strong>✔</strong> Incluir testes e desafios práticos.</li>
+            </ul>
+        </section>
+
+        <section class="secao" id="implementacao-tecnica">
+            <h2 class="titulo-secao">Implementação Técnica</h2>
+            <p><strong>📌 HTML:</strong> Estruturar o conteúdo e a navegação.</p>
+            <p><strong>📌 CSS:</strong> Estilos e animações visuais.</p>
+            <p><strong>📌 JavaScript:</strong> Interações e dinâmica.</p>
+        </section>
+
+        <section class="secao" id="extras">
+            <h2 class="titulo-secao">Extras</h2>
+            <p>Desafios práticos e sistemas de recompensa para um aprendizado mais envolvente.</p>
+        </section>
+
+        <section class="secao" id="acompanhamento">
+            <h2 class="titulo-secao">Acompanhamento</h2>
+            <p>Revisão de progressos e adaptação de estratégias para manter o foco e a motivação.</p>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2025 VortexSync - Todos os direitos reservados.
-        Os códigos disponiveis estão protegidos pela licença MIT e GPL-3.0</p>
+        &copy; © 2025 Faculdade Destiny BR | Todos os direitos reservados pelas licenças MIT e <GPD-3 class="0"> GPD-3.0</GPD-3>.
+        <p>Lincenciamento em andamento para 45.609.430/0001-43 </p>
     </footer>
 
-    <script>
-        document.querySelector('.menu-container').addEventListener('wheel', (event) => {
-            event.preventDefault();
-            document.querySelector('.menu-container').scrollLeft += event.deltaY;
-        });
-    </script>
+    <div class="version">
+        <p>Versão 0.23.141 - Atualizações contínuas para melhorar sua experiência de aprendizado!</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

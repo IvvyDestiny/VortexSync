@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Faculdade Destiny BR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a página Sobre Nós */
+        .sobre-nos-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .sobre-nos-container h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .sobre-nos-container p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .equipe-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .membro-equipe {
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .membro-equipe img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        🔥 OFERTA ESPECIAL: Domine C# e PHP com 50% de desconto! Inscreva-se agora! 🔥
+        <span class="close-btn" onclick="closeBanner()">×</span>
+    </div>
+
+    <div class="top-menu">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="#">Cursos</a>
+        <a href="#">Contato</a>
+        <a href="blog.html">Blog</a>
+        <a href="#">Suporte</a>
+        <a href="#">FAQ</a>
+        <button onclick="toggleTheme()">Alternar Tema</button>
+    </div>
+
+    <div class="sobre-nos-container">
+        <h2>Sobre Nós - Faculdade Destiny BR</h2>
+        <p>Bem-vindo à Faculdade Destiny BR, sua porta de entrada para o mundo da programação de forma divertida e acessível! Somos uma equipe apaixonada por tecnologia e educação, dedicada a fornecer cursos de alta qualidade em C#, PHP, HTML e muito mais.</p>
+
+        <h2>Nossa Missão</h2>
+        <p>Nossa missão é capacitar indivíduos de todas as origens a adquirir habilidades de programação essenciais para o sucesso no mercado de trabalho. Acreditamos que a programação pode ser aprendida por qualquer pessoa, desde que haja um ambiente de aprendizado adequado e recursos de qualidade.</p>
+
+        <h2>Nossa Equipe</h2>
+        <div class="equipe-container">
+            <div class="membro-equipe">
+                <img src="imagem_membro1.jpg" alt="Membro 1">
+                <h3>Ivan M</h3>
+                <p>Fundador e Instrutor</p>
+            </div>
+            <div class="membro-equipe">
+                <img src="imagem_membro2.jpg" alt="Membro 2">
+                <h3>Em aberto</h3>
+                <p>Coordenadora de Cursos</p>
+            </div>
+            <div class="membro-equipe">
+                <img src="imagem_membro3.jpg" alt="Membro 3">
+                <h3>Em aberto</h3>
+                <p>Desenvolvedor e Instrutor</p>
+            </div>
+        </div>
+
+        <h2>Por Que Escolher a Faculdade Destiny BR?</h2>
+        <ul>
+            <li><strong>Cursos Práticos e Envolventes:</strong> Nossos cursos são projetados para serem práticos e envolventes, com muitos exemplos e exercícios para você aplicar o que aprende.</li>
+            <li><strong>Instrutores Experientes:</strong> Nossa equipe de instrutores é formada por profissionais experientes e apaixonados por programação.</li>
+            <li><strong>Comunidade Ativa:</strong> Junte-se à nossa comunidade de alunos e compartilhe conhecimentos, tire dúvidas e faça networking.</li>
+            <li><strong>Flexibilidade:</strong> Aprenda no seu próprio ritmo, com acesso aos nossos cursos 24 horas por dia, 7 dias por semana.</li>
+        </ul>
+
+        <h2>Entre em Contato</h2>
+        <p>Tem alguma dúvida ou sugestão? Entre em contato conosco através do nosso <a href="#">formulário de contato</a> ou siga-nos nas redes sociais!</p>
+    </div>
+
+    <footer>
+        &copy; © 2025 Faculdade Destiny BR | Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
